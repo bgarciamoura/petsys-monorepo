@@ -19,7 +19,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "yarn lint && yarn test && yarn prettier:format"
+            "pre-commit": "yarn prettier:format && yarn lint && yarn test"
         }
     },
     "devDependencies": {
