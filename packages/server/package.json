@@ -11,7 +11,7 @@
         "prepack": "yarn build",
         "build": "yarn clean && yarn compile",
         "compile": "tsc --build && cp \"./package.json\" ./dist/package.json && cp \"./tsconfig.json\" ./dist/tsconfig.json",
-        "test": "echo 'no test'",
+        "test": "jest",
         "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings=1",
         "start:dev": "tsnd --ignore node_modules --transpile-only --respawn src/index.ts"
     },
