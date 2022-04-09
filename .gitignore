@@ -8,3 +8,5 @@ dist
 tsconfig.tsbuildinfo
 coverage
 **/server/tsconfig.tsbuildinfo
+/coverage.data
+/coverage/
