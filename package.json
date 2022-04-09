@@ -1,0 +1,42 @@
+{
+    "name": "petsys-monorepo",
+    "version": "1.0.0",
+    "description": "Monorepo for petsys system",
+    "main": "index.js",
+    "author": "2Code",
+    "license": "MIT",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "prepare": "node ./configure-references.js",
+        "run:dev": "lerna run --stream --parallel start:dev",
+        "build": "lerna run build --stream",
+        "lint": "lerna run lint --stream --parallel",
+        "test": "yarn jest --coverage",
+        "prettier:format": "prettier --write '**/*.{js, json, md, yml, yaml, ts, tsx, vue}'"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn lint && yarn test && yarn prettier:format"
+        }
+    },
+    "devDependencies": {
+        "@types/jest": "^27.4.1",
+        "@typescript-eslint/eslint-plugin": "^5.18.0",
+        "@typescript-eslint/parser": "^5.18.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^8.13.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-no-loops": "^0.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-vue": "^8.6.0",
+        "husky": "4",
+        "jest": "^27.5.1",
+        "lerna": "^4.0.0",
+        "prettier": "^2.6.2",
+        "ts-jest": "^27.1.4",
+        "typescript": "^4.6.3"
+    }
+}

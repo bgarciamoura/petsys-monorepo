@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./packages",
+        "paths": {
+            "@petsys-monorepo/server/*": [
+                "server/src/*"
+            ]
+        }
+    },
+    "files": [],
+    "references": [
+        {
+            "path": "packages/server"
+        },
+        {
+            "path": "packages/web"
+        }
+    ]
+}

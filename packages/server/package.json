@@ -1,0 +1,27 @@
+{
+    "name": "@petsys-monorepo/server",
+    "version": "1.0.0",
+    "description": "Server API for petsys system",
+    "main": "src/index.ts",
+    "author": "2Code",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
+        "prepack": "yarn build",
+        "build": "yarn clean && yarn compile",
+        "compile": "tsc --build && cp \"./package.json\" ./dist/package.json && cp \"./tsconfig.json\" ./dist/tsconfig.json",
+        "test": "echo 'no test'",
+        "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings=1",
+        "start:dev": "tsnd --ignore node_modules --transpile-only --respawn src/index.ts"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.3"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.12",
+        "@types/express": "^4.17.13",
+        "ts-node-dev": "^1.1.8"
+    }
+}
