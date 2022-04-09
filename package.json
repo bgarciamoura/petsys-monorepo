@@ -15,7 +15,7 @@
         "build": "lerna run build --stream",
         "lint": "lerna run lint --stream --parallel",
         "test": "yarn jest --coverage",
-        "prettier:format": "prettier --write '**/*.{js, json, md, yml, yaml, ts, tsx, vue}'",
+        "prettier:format": "prettier --write '**/*.{js, json, md, yml, yaml, ts, tsx, vue, prisma}'",
         "bootstrap": "lerna bootstrap"
     },
     "husky": {
