@@ -15,7 +15,7 @@
         "build": "lerna run build --stream",
         "lint": "lerna run lint --stream --parallel",
         "test": "yarn jest --coverage",
-        "prettier:format": "prettier --write '**/*.{js, json, md, yml, yaml, ts, tsx, vue}'",
+        "prettier:format": "prettier --write '**/*.{js, json, md, yml, yaml, ts, tsx, vue, prisma}'",
         "bootstrap": "lerna bootstrap"
     },
     "husky": {
@@ -29,6 +29,7 @@
         "@types/jest": "^27.4.1",
         "@typescript-eslint/eslint-plugin": "^5.18.0",
         "@typescript-eslint/parser": "^5.18.0",
+        "dotenv": "^16.0.0",
         "eslint": "^8.13.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-no-loops": "^0.3.0",
