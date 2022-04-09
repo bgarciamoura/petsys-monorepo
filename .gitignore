@@ -1,4 +1,10 @@
 node_modules
 yarn.lock
 dist
+**/dist
+**/node_modules
+**/package-lock.json
+**/tsconfig.tsbuildinfo
+tsconfig.tsbuildinfo
 coverage
+**/server/tsconfig.tsbuildinfo
