@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["linux-musl", "windows"]
 }
 
@@ -15,26 +15,25 @@ model User {
   password  String
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  Address   Address[]
+  address   Address[]
 }
 
 model Tutor {
   id        String    @id @default(uuid())
   name      String
   email     String
-  password  String
-  Pet       Pet[]
+  pet       Pet[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  Address   Address[]
+  address   Address[]
 }
 
 model Pet {
   id        String   @id @default(uuid())
   name      String
   age       Int
-  tutor_id  String
-  tutor     Tutor    @relation(fields: [tutor_id], references: [id])
+  tutor_id  String?
+  tutor     Tutor?   @relation(fields: [tutor_id], references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -44,10 +43,9 @@ model Address {
   street    String
   city      String
   country   String
-  userId    String
-  user_id   String
+  user_id   String?
   user      User?    @relation(fields: [user_id], references: [id])
-  tutor_id  String
+  tutor_id  String?
   tutor     Tutor?   @relation(fields: [tutor_id], references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

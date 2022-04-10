@@ -13,11 +13,12 @@
         "compile": "tsc --build && cp \"./package.json\" ./dist/package.json && cp \"./tsconfig.json\" ./dist/tsconfig.json",
         "test": "jest",
         "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings=1",
-        "start:dev": "tsnd --ignore node_modules --transpile-only --respawn src/index.ts",
+        "prettier:format": "prettier --write '**/*.{js, json, md, yml, yaml, ts, tsx, vue, prisma}'",
+        "start:dev": "tsnd --ignore node_modules --transpile-only --poll --respawn src/index.ts",
         "db:introspect": "npx prisma db pull",
         "prisma:format": "npx prisma format",
         "prisma:generate": "npx prisma generate",
-        "prisma:migrate:dev": "npx prisma migrate dev",
+        "prisma:migrate:dev": "docker exec -it petsys_app_1 /bin/sh -c \"cd packages/server; npx prisma migrate dev\"",
         "prisma:migrate:prod": "npx prisma migrate deploy"
     },
     "dependencies": {
