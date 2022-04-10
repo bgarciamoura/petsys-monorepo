@@ -14,7 +14,7 @@
         "test": "jest",
         "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings=1",
         "prettier:format": "prettier --write '**/*.{js, json, md, yml, yaml, ts, tsx, vue, prisma}'",
-        "start:dev": "tsnd --ignore node_modules --transpile-only --poll --respawn src/index.ts",
+        "start:dev": "tsnd --debug --exit-child --ignore node_modules --transpile-only --poll --respawn src/index.ts",
         "db:introspect": "npx prisma db pull",
         "prisma:format": "npx prisma format",
         "prisma:generate": "npx prisma generate",
