@@ -5,8 +5,14 @@
     "scripts": {
         "start:dev": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "test": "jest",
-        "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings=0"
+        "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings=0",
+        "test": "yarn jest --coverage",
+        "prettier:format": "prettier --write '**/*.{js, json, md, yml, yaml, ts, tsx, vue, prisma}'"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn prettier:format && yarn lint && yarn test"
+        }
     },
     "dependencies": {
         "core-js": "^3.8.3",

@@ -27,3 +27,4 @@ volumes:
     pgdata:
 networks:
     app_network:
+        driver: bridge
